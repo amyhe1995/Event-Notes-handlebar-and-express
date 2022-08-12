@@ -1,58 +1,135 @@
-[
-  {
-    "id": 1,
-    "title": "Kea in Flight",
-    "comments": ["Very arty."],
-    "artwork": "/images/kea.jpg",
-    "artist": {
-      "name": "Ben",
-      "url": "https://www.flickr.com/photos/seabirdnz/"
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Titanic",
+      "director": ["James Cameron"],
+      "release_year": "1997",
+      "description": "In the year 1912 a young poor guy, Leonardo, travels by the gorgeous ship Titanic from London to New York with a big dream. On board he meets a fabulous, wealthy girl, Kate Winslet. He fells in love with her as soon as he sees this gorgeous girl. However, after a few days the ship hits an enormous iceberg and the tragedy begins to unfold. The Titanic starts sinking. The movie is very close to the real tragedy. It shows a beautiful love story with an extremely sad ending.",
+      "rating": "",
+      "main_stars": ["Leonardo DiCaprio", "Kate Winslet"],
+      "image": "/images/titanic.png",
+      "comments": [
+        {
+          "user": "river",
+          "commentText": "It was ok",
+          "rating": 5
+        },
+        {
+          "user": "Nelson",
+          "commentText": "terrible\r\n",
+          "rating": "awd"
+        }
+      ]
     },
-    "license": {
-      "name": "CC BY-ND 2.0",
-      "url": "https://creativecommons.org/licenses/by-nd/2.0/"
-    }
-  },
-  {
-    "id": 2,
-    "title": "Kowhai Flowers",
-    "comments": ["Yellow.", "So yellow."],
-    "artwork": "/images/kowhai.jpg",
-    "artist": {
-      "name": "Sid Mosdell",
-      "url": "https://www.flickr.com/photos/sidm/"
+    {
+      "id": "2",
+      "title": "The Longest Yard",
+      "director": ["Peter Segal"],
+      "release_year": "2005",
+      "description": "While doing time, a professional quarterback persuades a fellow convict and former coach to prepare a group of inmates for a game agains the guards.",
+      "rating": "",
+      "main_stars": ["Adam Sandler", "Chris Rock", "James Cromwell"],
+      "image": "/images/the-longest-yard.jpg",
+      "comments": []
     },
-    "license": {
-      "name": "CC BY 2.0",
-      "url": "https://creativecommons.org/licenses/by/2.0/"
-    }
-  },
-  {
-    "id": 3,
-    "title": "Kotare",
-    "comments": [],
-    "artwork": "/images/kotare.jpg",
-    "artist": {
-      "name": "Sid Mosdell",
-      "url": "https://www.flickr.com/photos/sidm/"
+    {
+      "id": "3",
+      "title": "The Wolf of Wall Street",
+      "director": ["Martin Scorcese"],
+      "release_year": "2013",
+      "description": "Audacious, risk-taking Wall Street stockbroker Jordan Belfort amasses weath with his brash, drug-fueled attitude, drawing the FBI attention.",
+      "rating": "",
+      "main_stars": ["Leonardo DiCaprio", "Johan Hill", "Margot Robbie"],
+      "image": "/images/the-wolf-of-wall-street.jpg",
+      "comments": []
     },
-    "license": {
-      "name": "CC BY 2.0",
-      "url": "https://creativecommons.org/licenses/by/2.0/"
-    }
-  },
-  {
-    "id": 4,
-    "title": "Harakeke Flowers",
-    "comments": ["Rare to see one without a tui feeding on it!"],
-    "artwork": "/images/harakeke.jpg",
-    "artist": {
-      "name": "Sid Mosdell",
-      "url": "https://www.flickr.com/photos/sidm/"
+    {
+      "id": "4",
+      "title": "The Pursuit of Happyness",
+      "director": ["Gabriele Muccino"],
+      "release_year": "2006",
+      "description": "A newly single father determined to lift himself and his son out of poverty works his way up from the bottom at a stock brokerage firm.",
+      "rating": "",
+      "main_stars": ["Will Smith", "Jaden Smith", "Thandiwe Newton"],
+      "image": "/images/the-pursuit-of-happyness.jpg",
+      "comments": []
     },
-    "license": {
-      "name": "CC BY 2.0",
-      "url": "https://creativecommons.org/licenses/by/2.0/"
+    {
+      "id": "5",
+      "title": "Django Unchained",
+      "director": ["Quentin Tarantino"],
+      "release_year": "2012",
+      "description": "The 'D' in Django may be silent, but you will speak favorably about Jamie Foxx, Christoph Waltz, Leonardo DiCaprio and Kerry Washington's performances.",
+      "rating": "",
+      "main_stars": [
+        "Jamie Foxx",
+        "Christoph Waltz",
+        "Leonardo DiCaprio",
+        "Kerry Washington"
+      ],
+      "image": "/images/django-unchained.jpg",
+      "comments": []
+    },
+    {
+      "id": "6",
+      "title": "A Beautiful Mind",
+      "director": ["Ron Howard"],
+      "release_year": "2001",
+      "description": "In a decades-spanning biopic, brilliant mathematician John Forbes Nash Jr. struggles with schizophrenia while making history in his field.",
+      "rating": "",
+      "main_stars": ["Russell Crowe", "Jennifer Connelly"],
+      "image": "/images/a-beautiful-mind.jpg",
+      "comments": []
+    },
+    {
+      "id": "7",
+      "title": "Legends of the Fall",
+      "director": ["Edward Zwick"],
+      "release_year": "1994",
+      "description": "The three sons of a Mointana rancher are swept up in te violence of World War I and their love for the same woman in this epic family saga.",
+      "rating": "",
+      "main_stars": [
+        "Brad Pitt",
+        "Anthony Hopkins",
+        "Aidan Quinn",
+        "Julia Ormond"
+      ],
+      "image": "/images/legends-of-the-fall.jpg",
+      "comments": []
+    },
+    {
+      "id": "8",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "director": ["Peter Jackson"],
+      "release_year": "2001",
+      "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+      "rating": "",
+      "main_stars": ["Elijah Wood", "Ian McKellen", "Orlando Bloom"],
+      "image": "/images/the-lord-of-the-rings.jpg",
+      "comments": []
+    },
+    {
+      "id": "9",
+      "title": "The Matrix",
+      "director": ["Lana Wachowski", "Lilly Wachowski"],
+      "release_year": "1999",
+      "description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+      "rating": "",
+      "main_stars": ["Elijah Wood", "Ian McKellen", "Orlando Bloom"],
+      "image": "/images/matrix.jpg",
+      "comments": []
+    },
+    {
+      "id": "10",
+      "title": "Avatar",
+      "director": ["James Cameron"],
+      "release_year": "2009",
+      "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+      "rating": "",
+      "main_stars": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+      "image": "/images/avatar.jpg",
+      "comments": []
     }
-  }
-]
+  ]
+}
