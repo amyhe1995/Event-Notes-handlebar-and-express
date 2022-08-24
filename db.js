@@ -5,6 +5,7 @@ const connection = require('knex')(config)
 module.exports = {
   getEvents,
   getAlllocations,
+  addEvent,
 }
 
 function getEvents(db = connection) {
@@ -17,6 +18,25 @@ function getEvents(db = connection) {
       'locations.id AS location_id',
       'locations.name AS location_name'
     )
+}
+
+function addEvent(
+  eventTitle,
+  eventDate,
+  locationId,
+  eventDescription,
+  eventPrice,
+  eventType,
+  db = connection
+) {
+  return db('events').insert({
+    name: eventTitle,
+    location_id: locationId,
+    date: eventDate,
+    description: eventDescription,
+    price: eventPrice,
+    type: eventType,
+  })
 }
 
 function getAlllocations(db = connection) {
