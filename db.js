@@ -8,6 +8,7 @@ module.exports = {
   addEvent,
   getEventbyId,
   updateEvent,
+  deleteEvent,
 }
 
 function getEvents(db = connection) {
@@ -66,6 +67,11 @@ function updateEvent(
     })
     .where('events.id', id)
 }
+
+function deleteEvent(id, db = connection) {
+  return db('events').where('events.id', id).delete()
+}
+
 function getAlllocations(db = connection) {
   return db('locations').select()
 }

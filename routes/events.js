@@ -78,4 +78,15 @@ router.post('/event/:id/edit', (req, res) => {
     })
     .catch((err) => res.send(err.message))
 })
+
+router.post('/events/delete', (req, res) => {
+  const id = Number(req.body.id)
+
+  db.deleteEvent(id)
+    .then(() => {
+      res.redirect('/events')
+    })
+    .catch((err) => res.send(err.message))
+})
+
 module.exports = router
