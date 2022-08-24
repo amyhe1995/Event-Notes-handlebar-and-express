@@ -6,6 +6,7 @@ module.exports = {
   getEvents,
   getAlllocations,
   addEvent,
+  getEventbyId,
 }
 
 function getEvents(db = connection) {
@@ -30,6 +31,21 @@ function addEvent(event, db = connection) {
     price: event.eventPrice,
     type: event.eventType,
   })
+}
+
+function getEventbyId(id, db = connection) {
+  return db('events')
+    .join('locations', 'events.location_id', 'locations.id')
+    .select(
+      '*',
+      'events.name AS event_name',
+      'events.id AS event_id',
+      'locations.id AS location_id',
+      'locations.name AS location_name',
+      'events.description As event_description'
+    )
+    .where('events.id', id)
+    .first()
 }
 
 function getAlllocations(db = connection) {

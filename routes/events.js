@@ -40,4 +40,13 @@ router.post('/events/add', (req, res) => {
     .catch((err) => res.send(err.message))
 })
 
+router.get('/events/:id', (req, res) => {
+  db.getEventbyId(req.params.id)
+    .then((event) => {
+      res.render('event', event)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
 module.exports = router
