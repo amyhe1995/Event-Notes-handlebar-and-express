@@ -16,26 +16,19 @@ function getEvents(db = connection) {
       'events.name AS event_name',
       'events.id AS event_id',
       'locations.id AS location_id',
-      'locations.name AS location_name'
+      'locations.name AS location_name',
+      'events.description As event_description'
     )
 }
 
-function addEvent(
-  eventTitle,
-  eventDate,
-  locationId,
-  eventDescription,
-  eventPrice,
-  eventType,
-  db = connection
-) {
+function addEvent(event, db = connection) {
   return db('events').insert({
-    name: eventTitle,
-    location_id: locationId,
-    date: eventDate,
-    description: eventDescription,
-    price: eventPrice,
-    type: eventType,
+    name: event.eventTitle,
+    location_id: event.locationId,
+    date: event.eventDate,
+    description: event.eventDescription,
+    price: event.eventPrice,
+    type: event.eventType,
   })
 }
 

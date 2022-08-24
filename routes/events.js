@@ -7,6 +7,7 @@ const router = express.Router()
 router.get('/events', (req, res) => {
   db.getEvents()
     .then((events) => {
+      console.log(events)
       res.render('events', { events })
     })
     .catch((err) => {
@@ -23,22 +24,16 @@ router.get('/events/add', (req, res) => {
 })
 
 router.post('/events/add', (req, res) => {
-  const {
-    eventTitle,
-    locationId,
-    eventDate,
-    eventDescription,
-    eventType,
-    eventPrice,
-  } = req.body
-  db.addEvent(
-    eventTitle,
-    eventDate,
-    locationId,
-    eventDescription,
-    eventPrice,
-    eventType
-  )
+  const event = {
+    locationId: req.body.locationId,
+    eventTitle: req.body.eventTitle,
+    eventDate: req.body.eventDate,
+    eventType: req.body.eventType,
+    eventDescription: req.body.eventDescription,
+    eventPrice: req.body.eventPrice,
+  }
+  console.log(event)
+  db.addEvent(event)
     .then(() => {
       res.redirect('/events')
     })
