@@ -1,26 +1,16 @@
 const express = require('express')
-const fs = require('fs')
 const hbs = require('express-handlebars')
-const server = express()
-const routes = require('routes')
-const data = require('./data.json')
 
-// middleware setup
-server.use(express.static('public'))
-server.use(express.urlencoded({ extend: true }))
-// HANDLEBARS CONFIGURATION
+const userRoutes = require('./routes/users')
+
+const server = express()
+
+// Middleware
 server.engine('hbs', hbs.engine({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
+server.use(express.urlencoded({ extended: true }))
 
-// homepage route setup
-server.get('/', (req, res) => {
-  fs.writeFile(data, (err, data) => {
-    if (err) return res.status(500).send(err.message)
-    const parsedData = JSON.parse(data)
-    res.render('home', parsedData)
-  })
-})
+// Routes
+server.use('/', userRoutes)
 
-//edit page route
-server.use('/', routes)
 module.exports = server
