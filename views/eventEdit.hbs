@@ -1,0 +1,40 @@
+<form action='/event/{{event.event_id}}/edit' method='POST'>
+
+  <div>
+    <label for='eventTitle'>Title</label>
+    <input
+      type='text'
+      value='{{event.event_name}}  '
+      id='eventTitle'
+      name='eventTitle'
+    />
+  </div>
+
+  <div>
+    <label for='location'>Location: </label>
+    <select id='locationId' name='locationId'>
+      {{#each locations}}
+        <option value='{{id}}'>{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div>
+    <label for='eventDate'>Date: </label>
+    <input type='text' value='{{event.date}}' id='eventDate' name='eventDate' />
+  </div>
+
+  <div>
+    <label for='eventDescription'> Description: </label>
+    <textarea
+      rows='13'
+      type='text'
+      id='eventDescription'
+      name='eventDescription'
+    >{{event.event_description}}</textarea>
+  </div>
+  <div>
+    <button type='submit'>Submit</button>
+  </div>
+
+</form>

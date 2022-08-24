@@ -49,4 +49,33 @@ router.get('/events/:id', (req, res) => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
 })
+
+router.get('/event/:id/edit', (req, res) => {
+  db.getEventbyId(req.params.id)
+    .then((event) => {
+      db.getAlllocations()
+        .then((locations) => {
+          const viewData = { event, locations }
+          console.log(viewData)
+          res.render('eventEdit', viewData)
+        })
+        .catch((err) => res.send(err.message))
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
+router.post('/event/:id/edit', (req, res) => {
+  const { eventTitle, eventDate, locationId, eventDescription } = req.body
+
+  const id = req.params.id
+
+  return db
+    .updateEvent(id, eventTitle, eventDate, locationId, eventDescription)
+    .then(() => {
+      res.redirect('/events')
+    })
+    .catch((err) => res.send(err.message))
+})
 module.exports = router
