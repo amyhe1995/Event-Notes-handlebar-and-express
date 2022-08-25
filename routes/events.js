@@ -7,7 +7,6 @@ const router = express.Router()
 router.get('/events', (req, res) => {
   db.getEvents()
     .then((events) => {
-      console.log(events)
       res.render('events', { events })
     })
     .catch((err) => {
@@ -68,9 +67,7 @@ router.get('/event/:id/edit', (req, res) => {
 
 router.post('/event/:id/edit', (req, res) => {
   const { eventTitle, eventDate, locationId, eventDescription } = req.body
-
   const id = req.params.id
-
   return db
     .updateEvent(id, eventTitle, eventDate, locationId, eventDescription)
     .then(() => {
@@ -81,7 +78,6 @@ router.post('/event/:id/edit', (req, res) => {
 
 router.post('/events/delete', (req, res) => {
   const id = Number(req.body.id)
-
   db.deleteEvent(id)
     .then(() => {
       res.redirect('/events')
