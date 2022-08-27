@@ -30,4 +30,14 @@ router.post('/location/add', (req, res) => {
     })
 })
 
+router.get('/location/:id', (req, res) => {
+  db.getLocationById(req.params.id)
+    .then((location) => {
+      res.render('location', location)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 module.exports = router
