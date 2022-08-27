@@ -1,0 +1,28 @@
+<form action='/location/{{id}}/edit' method='POST'>
+  <div>
+    <input type='hidden' name='id' value='{{id}}' />
+  </div>
+
+  <input type='hidden' name='id' value='{{id}}' />
+
+  <label for='name'>Location name</label>
+  <input
+    type='text'
+    id='name'
+    name='name'
+    placeholder='Location name'
+    value='{{name}}'
+  />
+
+  <label for='description'>Description</label>
+  <textarea
+    rows='7'
+    id='description'
+    name='description'
+    placeholder='Location description'
+  >{{description}}</textarea>
+  <div>
+    <button type='submit'>Edit Location</button>
+  </div>
+
+</form>

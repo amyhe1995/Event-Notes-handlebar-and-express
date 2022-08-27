@@ -40,4 +40,25 @@ router.get('/location/:id', (req, res) => {
     })
 })
 
+router.get('/location/:id/edit', (req, res) => {
+  db.getLocationById(req.params.id)
+    .then((location) => {
+      res.render('locationEdit', location)
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
+router.post('/location/:id/edit', (req, res) => {
+  const { name, description } = req.body
+  const id = req.params.id
+  return db
+    .updateLocation(id, name, description)
+    .then(() => {
+      res.redirect('/locations')
+    })
+    .catch((err) => res.send(err.message))
+})
+
 module.exports = router
