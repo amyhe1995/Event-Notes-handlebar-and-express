@@ -14,4 +14,20 @@ router.get('/locations', (req, res) => {
     })
 })
 
+router.get('/location/add', (req, res) => {
+  res.render('addLocation')
+})
+
+router.post('/location/add', (req, res) => {
+  const { name, description } = req.body
+
+  db.addLocation(name, description)
+    .then(() => {
+      res.redirect('/locations')
+    })
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
 module.exports = router
