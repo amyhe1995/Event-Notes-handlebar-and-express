@@ -5,3 +5,9 @@
 <div>
   <button><a href='/location/{{id}}/edit'>Edit Location</a></button>
 </div>
+<div>
+  <form method='POST' action='/location/delete'>
+    <input type='hidden' name='id' value='{{id}}' />
+    <button>Delete Location</button>
+  </form>
+</div>

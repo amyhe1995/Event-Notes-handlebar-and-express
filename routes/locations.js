@@ -61,4 +61,13 @@ router.post('/location/:id/edit', (req, res) => {
     .catch((err) => res.send(err.message))
 })
 
+router.post('/location/delete', (req, res) => {
+  const id = Number(req.body.id)
+  db.deleteLocation(id)
+    .then(() => {
+      res.redirect('/locations')
+    })
+    .catch((err) => res.send(err.message))
+})
+
 module.exports = router

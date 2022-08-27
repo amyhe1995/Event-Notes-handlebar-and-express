@@ -31,7 +31,6 @@ router.post('/events/add', (req, res) => {
     eventDescription: req.body.eventDescription,
     eventPrice: req.body.eventPrice,
   }
-  console.log(event)
   db.addEvent(event)
     .then(() => {
       res.redirect('/events')
