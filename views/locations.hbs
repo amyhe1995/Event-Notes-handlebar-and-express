@@ -1,5 +1,9 @@
-{{#each locations}}
-  <h3><a href='/location/{{id}}'>{{name}}</a></h3>
-  <p>{{description}}</p>
-{{/each}}
-<button><a href='/location/add'>Add Location</a></button>
+<ul class='cards'>
+  {{#each locations}}
+    <li class='card'>
+      <h3><a href='/location/{{id}}'>{{name}}</a></h3>
+      <p>{{description}}</p>
+    </li>
+  {{/each}}
+</ul>
+<button class='btn events-btn'><a href='/location/add'>Add Location</a></button>

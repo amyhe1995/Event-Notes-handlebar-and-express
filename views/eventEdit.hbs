@@ -1,6 +1,6 @@
 <form action='/event/{{event.event_id}}/edit' method='POST'>
 
-  <div>
+  <div class='input-container'>
     <label for='eventTitle'>Title</label>
     <input
       type='text'
@@ -10,7 +10,7 @@
     />
   </div>
 
-  <div>
+  <div class='input-container'>
     <label for='location'>Location: </label>
     <select id='locationId' name='locationId'>
       {{#each locations}}
@@ -19,12 +19,12 @@
     </select>
   </div>
 
-  <div>
+  <div class='input-container'>
     <label for='eventDate'>Date: </label>
     <input type='text' value='{{event.date}}' id='eventDate' name='eventDate' />
   </div>
 
-  <div>
+  <div class='input-description-container'>
     <label for='eventDescription'> Description: </label>
     <textarea
       rows='13'
@@ -33,7 +33,7 @@
       name='eventDescription'
     >{{event.event_description}}</textarea>
   </div>
-  <div>
+  <div class='button-container'>
     <button type='submit'>Edit Event</button>
   </div>
 

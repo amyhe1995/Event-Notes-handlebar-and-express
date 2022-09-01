@@ -1,4 +1,4 @@
-<div>
+<div class='event-container'>
   <div>
     <h3>{{event_name}}</h3>
   </div>
@@ -8,10 +8,10 @@
   <p>Type: {{type}}</p>
   <p>Description: {{event_description}}</p>
   <div>
-    <button><a href='/event/{{event_id}}/edit'>Edit Event</a></button>
+    <button class='btn'><a href='/event/{{event_id}}/edit'>Edit Event</a></button>
   </div>
   <form method='POST' action='/events/delete'>
     <input type='hidden' name='id' value='{{event_id}}' />
-    <button>Delete event</button>
+    <button class='btn'>Delete event</button>
   </form>
 </div>

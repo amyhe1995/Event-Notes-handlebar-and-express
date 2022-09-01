@@ -1,13 +1,9 @@
-<div>
+<div class='event-container'>
   <h3>{{name}}</h3>
-</div>
-<p>Description: {{description}}</p>
-<div>
-  <button><a href='/location/{{id}}/edit'>Edit Location</a></button>
-</div>
-<div>
+  <p>Description: {{description}}</p>
+  <button class='btn'><a href='/location/{{id}}/edit'>Edit Location</a></button>
   <form method='POST' action='/location/delete'>
     <input type='hidden' name='id' value='{{id}}' />
-    <button>Delete Location</button>
+    <button class='btn'>Delete Location</button>
   </form>
 </div>
