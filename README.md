@@ -1,7 +1,5 @@
 # Event Note
 
-## Setup
-
 ### What's included
  - Express
  - Knex
